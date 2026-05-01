@@ -1,5 +1,12 @@
 import requests
-response=requests.get("https://anime-facts-rest-api.herokuapp.com/api/v1")
-data=response.json()
-for i in data:
-    print(i["name"])
+
+def km():
+    response = requests.get("https://strangerthingsquotes.shadowdev.xyz/api/quotes")
+    if response.status_code != 200:
+        print("Error fetching data!")
+        return None
+    
+    data = response.json()
+    for i in len(data):
+        print(data[i]["quote"])
+km()
