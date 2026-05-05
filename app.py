@@ -1,4 +1,6 @@
 import requests
+corrcounter=0
+ccount=0
 def play():
     response = requests.get("https://strangerthingsquotes.shadowdev.xyz/api/quotes")
     if response.status_code != 200:
@@ -6,8 +8,6 @@ def play():
         return None
     
     data = response.json()
-    corrcounter=0
-    ccount=0
     numplay=0
     for i in range(len(data)):
         answer=data[i]["author"]
